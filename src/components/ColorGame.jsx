@@ -11,11 +11,11 @@ const ColorGame = () => {
   const [score, setScore] = useState(0);
   const [attempts, setAttempts] = useState(0);
   const [feedback, setFeedback] = useState("");
-  const [gameStarted, setGameStarted] = useState(false); 
+  const [gameStarted, setGameStarted] = useState(false);  
   const [gameOver, setGameOver] = useState(false);  
 
   const handleGuess = (color) => {
-    if (attempts >= 6) return;   
+    if (attempts >= 20) return; 
     setAttempts(attempts + 1);
 
     if (color === targetColor) {
@@ -25,7 +25,7 @@ const ColorGame = () => {
       setFeedback("Wrong! 😢");
     }
 
-    if (attempts < 6) {  
+    if (attempts < 19) {   
       setTargetColor(getRandomColor());
     }
 
